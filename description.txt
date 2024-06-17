@@ -1,0 +1,44 @@
+Câmera em primeira pessoa
+
+O projeto tem a seguinte estrutura:
+
+ Cena 1: Player (Nó RigidBody): cria-se um script.
+  -> Camera: clica no nó câmera e ativa o atributo Current como On.
+  -> CollisionShape: escolhe o shape BoxShape
+	No atributo Transforme -> Scale: x:0.6, y:0.6 e z:0.6
+  -> batendoasas (AudioStreamPlayer3D): vai em AudioStreamPlayer3D -> Stream e importa o áudio de batendoasas 
+  -> AudioStreamPlayer3D: vai em AudioStreamPlayer3D -> Stream e importa o áudio de tema
+
+Cena 2:
+  -> Canos (3D Scene): cria um script em canos.
+    -> Cano 1 (Area): vai em Area -> Transform -> Translation -> y: -7.37
+       -> CSGMesh1: CSGMesh -> New CylinderMesh e em Transform Scale y: 5, em seguida vai em Material -> New SpatialMaterial, vai em Albedo e escolhe    	 um verde claro.
+
+       -> CSGMesh2: CSGMesh -> New CylinderMesh e em Transform Scale x:1.4, y:0.5 e z:1.4, em seguida vai em Material -> New SpatialMaterial, vai em   	Albedo e escolhe uma cor escura.
+
+       -> CSGMesh3: CSGMesh -> New CylinderMesh e sobe ele, para ficar entre o cano e a borda com cor mais escura. ainda sobre o CSGMesh, vai em   	CSGShape -> escolhe a operação de subtração (operation -> Subtraction). em seguida vai em Material -> New SpatialMaterial, vai em   	Albedo e escolhe um azul bem claro. Na mesma altura de albedo vai em Emission -> marca On, escolhe um azul claro e Energy usa 2. Em Transform   	vai em Scale y:0.5
+
+       -> CollisionShape: vai em collisionShape -> New CylinderShape, em seguida veste o cano com o CylinderShape de cima a baixo
+
+  (duplica o cano 1 para cano 2)
+
+  -> Cano 2 (Area): vai em Area -> Transform -> Translation -> y: -7.37 e Rotattion Degress z: 180
+       -> CSGMesh1: CSGMesh -> New CylinderMesh e em Transform Scale y: 5, em seguida vai em Material -> New SpatialMaterial, vai em Albedo e escolhe    	 um verde claro.
+
+       -> CSGMesh2: CSGMesh -> New CylinderMesh e em Transform Scale x:1.4, y:0.5 e z:1.4, em seguida vai em Material -> New SpatialMaterial, vai em   	Albedo e escolhe uma cor escura.
+
+       -> CSGMesh3: CSGMesh -> New CylinderMesh e sobe ele, para ficar entre o cano e a borda com cor mais escura. ainda sobre o CSGMesh, vai em   	CSGShape -> escolhe a operação de subtração (operation -> Subtraction). em seguida vai em Material -> New SpatialMaterial, vai em   	Albedo e escolhe um azul bem claro. Na mesma altura de albedo vai em Emission -> marca On, escolhe um azul claro e Energy usa 2. Em Transform   	vai em Scale y:0.5
+
+       -> CollisionShape: vai em collisionShape -> New CylinderShape, em seguida veste o cano com o CylinderShape de cima a baixo
+
+   -> nó deletac (filho do nó geral Canos) (timer): vai em inspetor, wait time = 8 e marca autostart como ON.
+
+
+
+
+
+
+* Deve-se configurar uma entrada de dados em:
+  Project -> Project Settings -> Input Map. Usa-se a ação chamada 'voa' por meio do espaço do teclado.
+
+* Importa o material de aula para ser utilizado em sons.
